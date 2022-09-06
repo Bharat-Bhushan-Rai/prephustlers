@@ -13,15 +13,17 @@ const PostSchema= new Schema({
     },
     image:{
         type:String,
-        default:null
+        default:""
     },
     description:{
         type:String,
-        default:null
+        default:""
     },
-    liker:[{
-        type:Schema.Types.ObjectId
-    }],
+    link:{
+        type:String,
+        default:""
+    }
+    
     
 })
 const Post=mongoose.model('post',PostSchema);

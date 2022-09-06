@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import {useNavigate} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import { baseURL } from "../../api";
+import UserContext from "../../context/userContext";
+// const {useContext} from 'react';
 const SignIn=({setSignInActive})=>{
+    const {setUser}=useContext(UserContext);
     let navigate=useNavigate();
     const [formData,setFormData]=useState({email:"",password:""});
     const loginHandler=async(e)=>{
@@ -20,6 +23,7 @@ const SignIn=({setSignInActive})=>{
             if(res.success===true){
 
                 window.localStorage.setItem('JWTtoken',res.data.token);
+                // setUser(res.data.user);
                 navigate('/');
                 
             }

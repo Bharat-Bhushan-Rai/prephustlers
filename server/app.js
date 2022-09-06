@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const passport = require("passport");
+require('./config/passportJWT');
 const Grid = require("gridfs-stream");
 const { connection } = require("./config/db");
 var indexrouter = require("./api/Routes/index");

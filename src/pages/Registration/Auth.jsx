@@ -17,6 +17,7 @@ const Auth = () => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  
   const [signInActive, setSignInActive] = useState(true);
   return (
     <div className="auth-container">

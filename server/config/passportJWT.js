@@ -12,11 +12,13 @@ const User  = require('../models/User');
 passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
     User.findOne({ email: jwt_payload.email }, function (err, user) {
         if (err) {
+            // console.log(err);
             return done(err, false);
         }
         if (user) {
             return done(null, user);
         } else {
+            
             return done(null, false);
         }
     });

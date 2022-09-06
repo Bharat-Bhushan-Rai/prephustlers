@@ -3,9 +3,15 @@ import {toast} from "react-toastify";
 import { baseURL } from "../../api";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
+import { useContext } from "react";
+import {useNavigate} from 'react-router-dom';
+import UserContext from "../../context/userContext";
+
 
 const SignUp=({setSignInActive})=>{
-   
+
+    const {setUser}=useContext(UserContext);
+    let navigate=useNavigate();
     const [formData,setFormData]=useState({firstname:"",lastname:"",email:"",password:"",repassword:""})
     const uploadHandler=async(e)=>{
         console.log(e);
@@ -20,14 +26,19 @@ const SignUp=({setSignInActive})=>{
             formData.password===formData.repassword
         ){
             // post data
-            let res=await fetch(baseURL+'/auth/register/local',{
+            let result=await fetch(baseURL+'/auth/register/local',{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
                 },
                 body:JSON.stringify(formData)
             })
-            
+            let res=result.json();
+            if(res.success===true){
+                window.localStorage.setItem('JWTtoken',res.data.token);
+                setUser(res.data.user);
+                navigate('/');
+            }
             console.log(res);
         }
         else if(formData.password!==formData.repassword){

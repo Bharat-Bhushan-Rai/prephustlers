@@ -206,6 +206,12 @@ body{
     padding-left:2px;
 }
 
+.home-content-container{
+    width: 80%;
+    margin:auto;
+    padding:10px;
+}
+
 .user-info-click{
     position: absolute;
     top:70px;
@@ -238,23 +244,109 @@ body{
     cursor: pointer;
 }
 
+.post-container{
+    width:500px;
+    background: #fff;
+    margin: auto;
+    padding: 35px;
+    margin-bottom:10px;
+}
+.post-header{
+    display: flex;
+    justify-content: space-between;
+}
+.post-image-name-time{
+    display: flex;
+}
+.post-image-name-time img{
+    width:60px;
+    height: 60px;
+    padding:10px;
+}
+.post-name-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.post-name-time p{
+    margin:0;
+}
 
+.post-body-image img{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.post-extra-options{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post-footer{
+    width:100%;
+
+}
+.post-footer-activity{
+    display: flex;
+    justify-content: space-between;
+}
+.post-activity-icon{
+    display: inline;
+    padding: 10px;
+}
+
+.post-comment-post{
+    width:100%;
+    display:flex;
+    align-items: center;
+}
+
+.post-comment-post img{
+    width:50px;
+    height: 50px;
+    padding:10px;
+}
+.post-comment-post input{
+    width: 372px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    background-color: #efefef;
+    padding-left: 10px;
+    color: #b2b2b2;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    resize: none;
+}
+.post-comment-post button{
+    height: 44px;
+    margin-left: 5px;
+    background-color: #019fe2;
+    color: #fff;
+    padding:10px;
+}
 /* ------------- user ----------------- */
 .user-content-container{
     width: 80%;
     margin: auto;
     padding: 10px;
     display: flex;
+    /* justify-content: space-around; */
 }
 
 .user-profile{
     width:20%;
+    height: 500px;
     background: #fff;
     padding:15px;
     display:flex;
     flex-direction: column;
     position:relative;
+
     justify-content: center;
+    margin-right: 50px;
 }
 .user-profile-image{
     position:relative;
@@ -299,7 +391,42 @@ body{
 }
 
 
+/* -------individual post container------------ */
+.individual-post-container{
+    margin-top:5px;
+}
+
+/* --------------create Post Modal------------ */
+.createModal-Form{
+    display:flex;
+    flex-direction: column;
+    width:500px;
+    /* height: 400px; */
+}
+.createModal-Form input{
+    margin:5px;
+}
+.createModal-Form input[type='text']{
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    background-color: #efefef;
+    padding-left: 10px;
+    color: #b2b2b2;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    resize: none;
+
+}
+.createModal-Form button{
+    margin:5px;
+    border-radius:5px;
+    padding:10px;
+    border:none;
+    color:#fff;
+    background-color: #019fe2;
+    cursor:pointer;
 
 
-
+}
 
